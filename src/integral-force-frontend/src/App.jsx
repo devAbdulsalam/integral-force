@@ -17,7 +17,7 @@ function App() {
     setIsQuiz(true);
     return false;
   }
- console.log(questions)
+ console.log('demo questions',questions)
 
   return (
         <main className="main">
