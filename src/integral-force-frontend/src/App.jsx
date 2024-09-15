@@ -17,7 +17,7 @@ function App() {
     setIsQuiz(true);
     return false;
   }
-
+ console.log(questions)
 
   return (
         <main className="main">
@@ -68,16 +68,16 @@ function App() {
 							<h2 className="question-text">What is corruption?</h2>
 							<div className="option-list">
 								<div className="option">
-									<span>A. </span>
+									<span>A.</span>
 								</div>
 								<div className="option">
-									<span>B. </span>
+									<span>B.</span>
 								</div>
 								<div className="option">
 									<span>C.</span>
 								</div>
 								<div className="option">
-									<span>D. </span>
+									<span>D.</span>
 								</div>
 							</div>
 
