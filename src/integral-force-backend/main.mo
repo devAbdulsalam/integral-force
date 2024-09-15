@@ -1,7 +1,7 @@
 import HashMap "mo:base/HashMap";
 import Text "mo:base/Text";
 import Time "mo:base/Time";
-import Bool "mo:base/Bool";
+// import Bool "mo:base/Bool";
 
 
 actor {
