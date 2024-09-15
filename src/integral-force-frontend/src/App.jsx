@@ -2,6 +2,7 @@ import 'style.css'
 import { useState } from 'react';
 import { integral_force_backend } from 'declarations/integral-force-backend';
 import Score from './components/Score'
+import questions from './questions'
 function App() {
   const [name, setName] = useState('');
   const [isQuiz, setIsQuiz] = useState(false);
