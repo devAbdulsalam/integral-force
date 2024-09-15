@@ -2,13 +2,13 @@
 
 ### Team Members:
 - **Prince Ajocha**  
-  Email: [Add email here]
+  Email: princejosephpj56@gmail.com
   
 - **Abdulsalam Mohammed**  
-  Email: [Add email here]
+  Email: ammuftau74@gmail.com
   
-- **Abdul**  
-  Email: [Add email here]
+- **Abdulrahman abdulsalam**  
+  Email: abdulsalamamtech@gmail.com
 
 ---
 
@@ -33,7 +33,7 @@ While adding these features to our existing repository, we faced several challen
 
 ## Contact Us
 
-For more information or inquiries, feel free to reach out to the team members via email.
+For more information or inquiries, feel free to contact the team members via email: princejosephpj56@gmail.com.
 
 --- 
 
