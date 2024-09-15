@@ -1,41 +1,20 @@
-// https://m7sm4-2iaaa-aaaab-qabra-cai.ic0.app/?tag=2725540637
-// https://m7sm4-2iaaa-aaaab-qabra-cai.ic0.app/?tag=3412187116
-
-
-  // Register datatype
-  // type Profile = {
-  //   name : Text;
-  //   email : Text;
-  //   password : Text;
-  //   is_admin : Bool;
-  //   created_at : Time;
-  //   updated_at : Time;
-  // };
-// https://m7sm4-2iaaa-aaaab-qabra-cai.ic0.app/?tag=2725540637
-// https://m7sm4-2iaaa-aaaab-qabra-cai.ic0.app/?tag=2725540637
-
-
 import HashMap "mo:base/HashMap";
 import Text "mo:base/Text";
 import Time "mo:base/Time";
 import Bool "mo:base/Bool";
 
 
-
 actor {
 
 
-  //  Unique time stamp
+  // Unique time stamp
   public type Time = Time.Time;
 
   // Register datatype
   type Profile = {
     name : Text;
-    email : Text;
+    email: Text;
     password : Text;
-    // is_admin : Bool;
-    // created_at : Time;
-    // updated_at : Time;
   };
 
   // Login datatype
@@ -44,33 +23,33 @@ actor {
     password : Text;
   };
 
-  // Reward datatype
-  type RewardType = {
-    scores : Int;
-    tips : Int;
-  };
-
 
 
   // check for access control
   stable var HasAccess = false;
 
   // Unique user identity 
-  stable var AuthEmail : Text = "";
-
-  stable var AuthUser = {
-    var email = "";
-    var role = "";
-  };
-
-
-
+  stable var AuthUser : Text = "";
 
   // Hashmap for users
   let Users : HashMap.HashMap<Text, Profile> = HashMap.HashMap<Text, Profile>(0, Text.equal, Text.hash);
 
-  // Hashmap for Rewards
-  let Rewards : HashMap.HashMap<Text, RewardType> = HashMap.HashMap<Text, RewardType>(0, Text.equal, Text.hash);
+
+
+  // User datatype
+  type ActiveUser = {
+    name : Text;
+  };
+
+  // points datatype
+  public type PointType = Int;
+
+  
+
+  // Hashmap for points
+  let Points : HashMap.HashMap<Text, PointType> = HashMap.HashMap<Text, PointType>(0, Text.equal, Text.hash);
+
+
 
   // Register new user
   public func registerUser(user : Profile) : async Text {
@@ -90,6 +69,7 @@ actor {
 
   };
 
+  // Login user
   public func loginUser(user : Login) : async Text {
     
     // check if the user exist
@@ -101,12 +81,10 @@ actor {
         // check if the password is correct
         assert(_user.password == user.password);
 
-
         // grant the user access
         HasAccess := true;
         // login the user
-        AuthEmail := _user.email;
-        AuthUser.email := _user.email;
+        AuthUser := _user.email;
 
         return "user login";
        };
@@ -117,34 +95,70 @@ actor {
   };
 
 
-  stable var counter = 0;
 
-  // Get the value of the counter.
-  public query func getReward() : async Text {
+  public func putPoint(user : ActiveUser) : async Text {
     
-    let _user_rewards = Rewards.get(AuthUser.email);
+    // check if the user exist
+    let _user = Points.get(user.name);
 
-    switch(_user_rewards) {
-      case(?_user_rewards) { 
-        return "user already exist";
+    switch(_user) {
+      case(?_user) { 
+
+        let point = _user + 1;
+        Points.put(user.name, point);
+        return "point updated";
        };
       case(null) { 
-        return "reward not found";
+        Points.put(user.name, 1);
+        return "point added";
       };
     };
   };
 
-  // Set the value of the counter.
-  public func set(n : Nat) : async () {
-    counter := n;
+  public func getPoint(user : ActiveUser) : async Int {
+    
+    // check if the user exist
+    let _user = Points.get(user.name);
+
+    switch(_user) {
+      case(?_user) { 
+        return _user;
+       };
+      case(null) { 
+        return 0;
+      };
+    };
   };
 
-  // Increment the value of the counter.
-  public func inc() : async () {
-    counter += 1;
+
+  public func totalPoint() : async Int {
+    
+    // check if point exist
+    let _points = Points.size();
+    return _points;
+
+  };  
+
+
+  public func leaderBoard(user : ActiveUser) : async Int {
+    
+    // check if point exist
+    let _points = Points.size();
+    // check if the user exist
+    let _user = Points.get(user.name);
+
+    switch(_user) {
+      case(?_user) { 
+        return _user - _points;
+       };
+      case(null) { 
+        return 0;
+      };
+    };
   };
 
-  
+
+
 };
 
 
