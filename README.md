@@ -1,5 +1,4 @@
-# `integral-force`
-# Team Stem - AI Personal Tutor Project
+# Team Stem - integral-force
 
 ### Team Members:
 - **Prince Ajocha**  
