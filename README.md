@@ -1,4 +1,44 @@
 # `integral-force`
+# Team Stem - AI Personal Tutor Project
+
+### Team Members:
+- **Prince Ajocha**  
+  Email: [Add email here]
+  
+- **Abdulsalam Mohammed**  
+  Email: [Add email here]
+  
+- **Abdul**  
+  Email: [Add email here]
+
+---
+
+## Project Overview
+
+This project focuses on building an AI-powered personal tutor that promotes learning about crime and anti-corruption practices through interactive features. Our solution is designed to engage users with educational content, while also incorporating gamified elements for better retention and motivation.
+
+### Key Features:
+1. **Leaderboard/Grading System:**  
+   We plan to implement a leaderboard or simple grading system that allows users to track their progress as they advance through different books and acquire more knowledge on anti-corruption and crime prevention strategies.
+   
+2. **Q&A Game:**  
+   A simple question-and-answer game will engage users by presenting various behavioral tricks and tips for being a dutiful global citizen. This will provide an interactive learning experience while reinforcing key lessons.
+
+---
+
+## Challenges
+
+While adding these features to our existing repository, we faced several challenges. Due to technical difficulties, we decided to write new code to integrate our intended features more efficiently.
+
+---
+
+## Contact Us
+
+For more information or inquiries, feel free to reach out to the team members via email.
+
+--- 
+
+
 
 Welcome to your new `integral-force` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
