@@ -14,5 +14,8 @@
   "type": "module",
   "workspaces": [
     "src/integral-force-frontend"
-  ]
+  ],
+  "dependencies": {
+    "react-router-dom": "^6.26.2"
+  }
 }
