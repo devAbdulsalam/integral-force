@@ -1,7 +1,7 @@
 # Team Stem - integral-force
 
 ### Team Members:
-- **Prince Ajocha**  
+- **Prince Achoja**  
   Email: princejosephpj56@gmail.com
   
 - **Abdulsalam Mohammed**  
